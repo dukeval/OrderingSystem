@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PurchaseService } from '../purchase.service';
 import { LoginVerificationServiceService } from '../login-verification-service.service';
 import { Router } from '@angular/router';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -17,11 +18,14 @@ export class ProfileComponent implements OnInit {
     purchasedDate: Date;
   }[] = [];
 
+  profile: any = {};
+
   noOrderFound: boolean = false;
 
   constructor(
     private loginService: LoginVerificationServiceService,
     private purchaseService: PurchaseService,
+    private profileService: ProfileService,
     private route: Router
   ) {}
 
@@ -36,6 +40,10 @@ export class ProfileComponent implements OnInit {
             this.noOrderFound = true;
         }
       );
+
+      this.profileService.getProfile().subscribe(result => {
+        this.profile = result;
+      });
     } else this.route.navigate(['login']);
   }
 }

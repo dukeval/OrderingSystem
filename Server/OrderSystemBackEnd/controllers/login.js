@@ -17,7 +17,6 @@ exports.login = async (req, res) => {
 
 exports.register = async (req, res) => {
     try {
-        debugger
       const { email } = req.body;
       const {username }= req.body;
   
@@ -35,4 +34,14 @@ exports.register = async (req, res) => {
     } catch (error) {
         res.status(500).json({success: false, message: error.message})
     }
+  }
+
+  exports.getProfileInfo = async(req,res)=>{
+    const user = await User.findById(req.user._id);
+    
+    //validate password
+    if (!user) return res.status(401).json({message: 'User Profile not found.'});
+
+    res.send(user);
+
   }

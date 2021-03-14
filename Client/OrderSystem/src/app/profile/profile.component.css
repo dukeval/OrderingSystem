@@ -20,3 +20,9 @@
   width: 100%;
   margin: 0 auto;
 }
+
+.profileInfoTitle {
+  font-weight: 700;
+  text-align: right;
+  margin-right: 20px;
+}

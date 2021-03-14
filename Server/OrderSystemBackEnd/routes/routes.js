@@ -36,4 +36,6 @@ router.get('/orders', passport.authenticate('jwt', {session: false}), Orders.get
 
 router.post('/order', passport.authenticate('jwt', {session: false}), Orders.addOrder)
 
+router.get('/profile', passport.authenticate('jwt', {session: false}),LogIn.getProfileInfo);
+
 module.exports = router;

@@ -22,7 +22,6 @@ export class PurchaseService {
       Accept: '*/*'
     });
 
-    console.log(purchases);
     return this.http.request('post', `http://127.0.0.1:5000/order`, {
       body: {
         orders: purchases

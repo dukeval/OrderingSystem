@@ -1,4 +1,34 @@
 <div class="profileContainer">
+  <div>
+    <div><h1>Profile Info</h1></div>
+    <div class="profileContent">
+      <div class="profile">
+        <p>
+          <span class="profileInfoTitle">Name:</span><br />{{ profile.name }}
+        </p>
+        <p>
+          <span class="profileInfoTitle">Birthday:</span><br />{{
+            profile.birthday | date: "MM/dd/yyyy"
+          }}
+        </p>
+        <p>
+          <span class="profileInfoTitle">Gender:</span><br />{{
+            profile.gender
+          }}
+        </p>
+        <p>
+          <span class="profileInfoTitle">Email:</span><br />{{ profile.email }}
+        </p>
+        <p>
+          <span class="profileInfoTitle">Username:</span><br />{{
+            profile.username
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr />
   <div><h1>Purchase History</h1></div>
 
   <div class="profileContent">
