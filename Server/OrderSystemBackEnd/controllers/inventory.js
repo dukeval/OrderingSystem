@@ -5,8 +5,6 @@ exports.buildInventory = async(req, res) =>{
     const inventory = await Inventory.count();
 
     if(inventory==0){
-        console.log(`not found`);
-
         let newInventory = new Inventory({
         itemName: 'MacBook',
         itemDescription:
@@ -79,8 +77,6 @@ exports.buildInventory = async(req, res) =>{
         
     }); 
     }
-
-    console.log('output');
     
     res.status(200).json(`was successfully added.`);;
 }

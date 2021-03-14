@@ -26,24 +26,16 @@ export class MarketPlaceComponent implements OnInit {
     purchasedDate: Date;
   }[] = [];
 
-  constructor(
-    private loginService: LoginVerificationServiceService,
-    private purchaseService: PurchaseService,
-    private route: Router
-  ) {}
+  constructor(private purchaseService: PurchaseService) {}
 
   ngOnInit(): void {
-    if (this.loginService.isLoggedIn()) {
-      this.purchaseService.buildInventory().subscribe(result => {
-        console.log(result);
+    this.purchaseService.buildInventory().subscribe(result => {
+      //console.log(result);
 
-        this.purchaseService.getInventory().subscribe(result => {
-          this.inventoryItems = result;
-        });
+      this.purchaseService.getInventory().subscribe(result => {
+        this.inventoryItems = result;
       });
-    } else {
-      this.route.navigate(['login']);
-    }
+    });
   }
 
   addToUserOrderHistory(itemPurchased: any): void {

@@ -23,27 +23,23 @@ export class ProfileComponent implements OnInit {
   noOrderFound: boolean = false;
 
   constructor(
-    private loginService: LoginVerificationServiceService,
     private purchaseService: PurchaseService,
-    private profileService: ProfileService,
-    private route: Router
+    private profileService: ProfileService
   ) {}
 
   ngOnInit(): void {
-    if (this.loginService.isLoggedIn()) {
-      this.purchaseService.getPurchases().subscribe(
-        result => {
-          this.orderHistory = result.orders;
-        },
-        err => {
-          if (err.error.err == 'No Orders found for user.')
-            this.noOrderFound = true;
-        }
-      );
+    this.purchaseService.getPurchases().subscribe(
+      result => {
+        this.orderHistory = result.orders;
+      },
+      err => {
+        if (err.error.err == 'No Orders found for user.')
+          this.noOrderFound = true;
+      }
+    );
 
-      this.profileService.getProfile().subscribe(result => {
-        this.profile = result;
-      });
-    } else this.route.navigate(['login']);
+    this.profileService.getProfile().subscribe(result => {
+      this.profile = result;
+    });
   }
 }

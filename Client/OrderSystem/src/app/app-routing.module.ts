@@ -5,13 +5,22 @@ import { MarketPlaceComponent } from './market-place/market-place.component';
 import { LandingComponent } from './Landing/landing.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthguardService } from './authguard.service';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'marketplace', component: MarketPlaceComponent },
+  {
+    path: 'marketplace',
+    component: MarketPlaceComponent,
+    canActivate: [AuthguardService]
+  },
   { path: 'register', component: RegistrationComponent },
-  { path: 'profile', component: ProfileComponent }
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthguardService]
+  }
 ];
 
 @NgModule({
