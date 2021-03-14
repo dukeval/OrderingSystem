@@ -1,0 +1,23 @@
+<div class="inventoryContent">
+  <div class="inventory" *ngFor="let info of inventoryItems">
+    <div class="card" style="width: 22rem;">
+      <img
+        src="{{ info.itemImage }}"
+        alt="info.itemDescription"
+        width="250"
+        height="250"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ info.itemName }}</h5>
+        <p class="card-text">
+          {{ info.itemDescription }}
+        </p>
+        <p class="card-text">$ {{ info.itemPrice }}</p>
+        <a class="btn btn-primary" (click)="addToUserOrderHistory(info)"
+          >Purchase</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

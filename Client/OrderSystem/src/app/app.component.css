@@ -1,0 +1,11 @@
+.navigationLink a {
+  color: white;
+}
+
+.navigationLink {
+  padding-left: 50px;
+}
+
+.toolbar span {
+  padding-left: 20px;
+}

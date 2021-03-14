@@ -1,0 +1,33 @@
+<div class="profileContainer">
+  <div><h1>Purchase History</h1></div>
+
+  <div class="profileContent">
+    <div class="noOrders" *ngIf="noOrderFound">
+      <div class="noOrdersContent">
+        <p>No order history found!</p>
+      </div>
+    </div>
+
+    <div class="profile" *ngFor="let info of orderHistory">
+      <div class="card" style="width: 22rem;">
+        <img
+          src="{{ info.itemImage }}"
+          alt="info.itemDescription"
+          width="250"
+          height="250"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><b>Item:</b> {{ info.itemName }}</h5>
+          <p class="card-text">
+            <b>Description:</b> {{ info.itemDescription }}
+          </p>
+          <p class="card-text"><b>Price:</b> $ {{ info.itemPrice }}</p>
+          <p class="card-text">
+            <b>Purchased On:</b> {{ info.purchasedDate | date: "MM/dd/yyyy" }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

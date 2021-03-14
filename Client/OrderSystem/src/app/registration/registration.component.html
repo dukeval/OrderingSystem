@@ -1,0 +1,138 @@
+<div class="register">
+  <form method="POST" [formGroup]="formGroup" (ngSubmit)="registerUser()">
+    <div class="error">
+      <p>{{ error }}</p>
+    </div>
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-5">
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+        />
+        <div
+          class="error"
+          *ngIf="
+            !this.formGroup.valid &&
+            this.formGroup.controls.name.touched &&
+            this.formGroup.controls.name.status == 'INVALID'
+          "
+        >
+          Please enter a valid name
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Gender</label>
+      <div class="col-sm-5">
+        <select name="gender" id="gender" formControlName="gender">
+          <option value=""></option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <div
+          class="error"
+          *ngIf="
+            !this.formGroup.valid &&
+            this.formGroup.controls.gender.touched &&
+            this.formGroup.controls.gender.status == 'INVALID'
+          "
+        >
+          Please prodive your gender
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Birthday</label>
+      <div class="col-sm-5">
+        <input
+          type="date"
+          class="form-control"
+          id="birthday"
+          formControlName="birthday"
+        />
+        <div
+          class="error"
+          *ngIf="
+            !this.formGroup.valid &&
+            this.formGroup.controls.birthday.touched &&
+            this.formGroup.controls.birthday.status == 'INVALID'
+          "
+        >
+          Please enter a valid birthday
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-5">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
+        <div
+          class="error"
+          *ngIf="
+            !this.formGroup.valid &&
+            this.formGroup.controls.email.touched &&
+            this.formGroup.controls.email.status == 'INVALID'
+          "
+        >
+          Please enter a valid email address
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-5">
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          formControlName="username"
+        />
+        <div
+          class="error"
+          *ngIf="
+            !this.formGroup.valid &&
+            this.formGroup.controls.username.touched &&
+            this.formGroup.controls.username.status == 'INVALID'
+          "
+        >
+          Please enter a valid username
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label"
+        >Password</label
+      >
+      <div class="col-sm-5">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+        />
+        <div
+          class="error"
+          *ngIf="
+            !this.formGroup.valid &&
+            this.formGroup.controls.password.touched &&
+            this.formGroup.controls.password.status == 'INVALID'
+          "
+        >
+          Please enter a valid password
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+</div>

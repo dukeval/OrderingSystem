@@ -1,0 +1,22 @@
+.profile {
+  margin-left: 50px;
+  padding: 20px;
+}
+
+.profileContent {
+  display: inline-flex;
+  flex-flow: wrap;
+  width: 100%;
+}
+
+.noOrders {
+  margin: 0 auto;
+}
+.noOrdersContent {
+  font-weight: 900;
+}
+
+.profileContainer {
+  width: 100%;
+  margin: 0 auto;
+}

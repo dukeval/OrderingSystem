@@ -1,0 +1,9 @@
+.inventory {
+  margin-left: 50px;
+  padding: 20px;
+}
+
+.inventoryContent {
+  display: inline-flex;
+  flex-flow: wrap;
+}

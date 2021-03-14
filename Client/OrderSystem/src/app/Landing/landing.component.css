@@ -1,0 +1,19 @@
+.title {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.content {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.nav {
+  float: right;
+  width: 15%;
+}
+
+.registration {
+  padding-left: 50px;
+}

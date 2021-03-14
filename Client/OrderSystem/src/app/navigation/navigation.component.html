@@ -1,0 +1,21 @@
+<div class="toolbar" role="banner">
+  <div class="spacer"></div>
+
+  <span class="navigationLink" *ngIf="!loginService.isLoggedIn()"
+    ><a routerLink="login" routerLinkActive="active-link">Log In</a></span
+  >
+  <span class="navigationLink" *ngIf="!loginService.isLoggedIn()"
+    ><a routerLink="register" routerLinkActive="active-link">Register</a></span
+  >
+  <span class="navigationLink" *ngIf="loginService.isLoggedIn()"
+    ><a routerLink="marketplace" routerLinkActive="active-link">Home</a></span
+  >
+  <span class="navigationLink" *ngIf="loginService.isLoggedIn()"
+    ><a routerLink="profile" routerLinkActive="active-link">Profile</a></span
+  >
+  <span class="navigationLink" *ngIf="loginService.isLoggedIn()"
+    ><a routerLink="logout" routerLinkActive="active-link" (click)="logOut()"
+      >Log Out</a
+    ></span
+  >
+</div>
